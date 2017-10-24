@@ -1,0 +1,430 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+  <meta charset="utf-8" />
+  <title> STAMPLAY | Connect. Automate. Invent.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description"  content="Build, deploy and run client-server applications without coding the back-end and forgetting the infrastructure."/>
+
+  
+
+ <!-- BEGIN GLOBAL MANDATORY STYLES -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700|Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://drrjhlchpvi7e.cloudfront.net/editor/a75ab6e/dist/logincss.gz.css">
+
+  <link rel="shortcut icon" href="https://drrjhlchpvi7e.cloudfront.net/editor/a75ab6e/img/favicon32.png" size="32x32">
+  <link rel="icon" href="https://drrjhlchpvi7e.cloudfront.net/editor/a75ab6e/img/favicon32.png" sizes="32x32">
+
+  <script type="text/javascript">
+    var _csrf = "DUX0VSCa-1AfNioH75zdgAe6IaxREfZAb4_Q";
+    console && console.log("%c Welcome! Looking for support tell our team at support@stamplay.com","font-size:1.5em;color:#4b8df8;");
+    var mixpanel = null;
+  </script>
+<script type="text/javascript">
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.0.1";
+    analytics.load("SqHrg6cu3w93QuG3CrK5VJI9crD79E6i");
+    }}();
+</script>
+
+</head>
+
+<!-- BEGIN BODY -->
+<body class="login login-background">
+
+ <div class="container">
+
+    <div id="cookie-header" class="topbar" style="background-color:#3D3F4D;height: 25px;display:none;">
+      <span style="font-size: 12px;margin-left: 10px;"> 
+        <i class="mdi mdi-verified" style="font-size: 12px;"></i>
+        Cookies help us deliver our services. By using our services, you agree to our use of cookies. <a href="https://stamplay.com/privacy" target="_blank" style="text-decoration:underline">Learn more</a> - <a id="cookie-agree" style="text-decoration:underline">Got it</a></span>
+    </div>
+    <!-- BEGIN LOGIN ROW -->
+    <div class="row sign-in">
+      <!-- LOGIN CONTENT -->
+      <div class="content col2 push2 sheet sheet-page">
+    
+        <!-- HEADER ROW -->
+        <div class="row">
+          <div class="content col4 text-center">
+            <div class="logo-login-img"></div>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="content col4 text-center">
+            <span class="sign-up-head">Login to your account</span>
+          </div>
+        </div>
+    
+        <form
+          id="local-login"
+          action="/auth/local/connect?_csrf=DUX0VSCa-1AfNioH75zdgAe6IaxREfZAb4_Q"
+          method="POST"
+          data-parsley-validate
+          style="margin-top:15px;">
+    
+          <div class="row">
+            <div class="content col4">
+              <label for="email">Email address</label>
+              <input
+                type="email"
+                data-parsley-type="email"
+                required
+                data-parsley-required
+                data-parsley-required-message="Please enter an email address"
+                placeholder=""
+                name="primaryEmail">
+            </div>
+          </div>
+          <div class="row">
+            <div class="content col4">
+              <div class="row">
+                <div class="col1 content">
+                  <label for="email">Password</label>
+                </div>
+                <div class="col3 content text-right">
+                  <label class="legend forgot-psw-text" id="forgot-psw-switch">forgot password?</label>
+                </div>
+              </div>
+              <input
+                type="password"
+                required
+                data-parsley-required
+                data-parsley-required-message="Please enter a password"
+                placeholder=""
+                name="password">
+            </div>
+          </div>
+    
+          <div class="row bottompadded">
+            <div class="content col4">
+              <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+          </div>
+        </form>
+    <!--
+            <div class="content col1 text-center" style="padding-top:10px; height:20px;">
+              <label class="legend">or</label>
+            </div>
+     -->
+          <div class="row" style="margin-top:10px;">
+            <label class="legend text-center forgot-psw-text">
+              or Sign In via
+            </label>
+          </div>
+    
+          <div class="row" style="margin-top:10px;">
+            <div class="content col2">
+                <button id="sign-in-google-btn" class="btn gl-sign-in">
+                  <i class="mdi mdi-google-glass" style="font-weight:700"></i> Google
+                </button>
+            </div>
+            <div class="content col2">
+                <button id="sign-in-github-btn" class="btn github-sign-in">
+                  <i class="mdi mdi-github-circle" style="font-weight:700"></i> Github
+                </button>
+            </div>
+          </div>
+    
+      <!-- END LOGIN CONTENT -->
+      </div>
+    <!-- END LOGIN ROW -->
+    </div>
+    
+    <!-- BEGIN DONT ACCOUNT ROW -->
+    <div class="row sign-in">
+      <!-- DONT ACCOUNT CONTENT -->
+      <div class="content col2 push2">
+        <button class="btn create-account-switch">Create a new account!</button>
+      </div>
+    </div>
+    <!-- END DONT ACCOUNT ROW -->
+
+    <div class="row sign-up">
+    
+      <div class="content push2 col2 sheet sheet-page">
+    
+         <!-- HEADER ROW -->
+        <div class="row">
+          <div class="content col4 text-center">
+            <div class="logo-login-img"></div>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="content col4 text-center">
+            <span class="sign-up-head">Create your free account!</span>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="col4">
+    
+           <form
+            id="local-signup"
+            action="/user/?_csrf=DUX0VSCa-1AfNioH75zdgAe6IaxREfZAb4_Q"
+            method="post"
+            data-parsley-validate
+             style="margin-top:5px;">
+    <!--
+          <input
+            style="display:none"
+            id="csrf_token"
+            type="text"
+            value="DUX0VSCa-1AfNioH75zdgAe6IaxREfZAb4_Q"
+            name="_csrf"/> -->
+    
+    
+          <div class="row">
+            <div class="content col4">
+              <label for="email">Email address</label>
+              <input
+                id="email-address-register"
+                type="email"
+                data-parsley-type="email"
+                required
+                data-parsley-required
+                data-parsley-required-message="Please enter an email address"
+                data-parsley-uniquemail
+                data-parsley-no10minute
+                placeholder=""
+                name="primaryEmail">
+            </div>
+          </div>
+    
+          <div class="row">
+            <div class="content col4">
+              <div class="row">
+                <div class="col1 content">
+                  <label for="email">Password</label>
+                </div>
+                <div class="col3 content text-right">
+                  <label class="legend forgot-psw">8 characters minimum</label>
+                </div>
+              </div>
+              <input
+                type="password"
+                required
+                data-parsley-required
+                data-parsley-required-message="Please enter a password"
+                data-parsley-minlength="8"
+                data-parsley-min-message="Please enter at least 8 characters"
+                placeholder=""
+                name="password">
+            </div>
+          </div>
+    
+          <div class="row">
+            <div class="content col4">
+              <button type="submit" class="btn btn-primary">Create my account</button>
+            </div>
+          </div>
+        </form>
+    
+          <div class="row" style="margin-top:10px;">
+            <label class="legend text-center forgot-psw-text">
+              or Sign Up via
+            </label>
+          </div>
+    
+          <div class="row" style="margin-top:10px;">
+            <div class="content col2">
+                <button id="sign-in-google-btn" class="btn gl-sign-in">
+                  <i class="mdi mdi-google-glass" style="font-weight:700"></i> Google
+                </button>
+            </div>
+            <div class="content col2">
+                <button id="sign-in-github-btn" class="btn github-sign-in">
+                  <i class="mdi mdi-github-circle" style="font-weight:700"></i> Github
+                </button>
+            </div>
+          </div>
+    
+    
+          <div class="row">
+            <div class="content col4" style="padding-top:5px;">
+              <small class="legend">By clicking above, you are agreeing to the <a target="_blank" style="text-decoration:underline;" href="https://www.stamplay.com/terms">Terms of Service</a></small>
+            </div>
+          </div>
+    
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- BEGIN DONT ACCOUNT ROW -->
+    <div class="row sign-up">
+      <!-- DONT ACCOUNT CONTENT -->
+      <div class="content col2 push2">
+        <button class="btn signin-account-switch" >Sign in</button>
+      </div>
+    </div>
+
+    
+    <!-- BEGIN FORGOT PSW -->
+    <div class="row choose-psw">
+    
+      <div class="content push2 col2 sheet sheet-page">
+    
+         <!-- HEADER ROW -->
+        <div class="row">
+          <div class="content col4 text-center">
+            <div class="logo-login-img"></div> 
+          </div>
+        </div>  
+    
+        <div class="row">
+          <div class="content col4 text-center">
+            <span class="sign-up-head">Enter your new password</span>
+          </div>
+        </div>       
+    
+        <div class="row">
+          <div class="col4">
+      
+           <form 
+            id="local-signup"
+            action="/user/choosePwd?_csrf=DUX0VSCa-1AfNioH75zdgAe6IaxREfZAb4_Q" 
+            method="post" 
+            data-parsley-validate>
+        <!-- 
+                <input 
+            style="display:none" 
+            id="csrf_token"
+            type="text" 
+            value="DUX0VSCa-1AfNioH75zdgAe6IaxREfZAb4_Q" 
+            name="_csrf"/> -->
+    
+    
+          <div class="row">
+            <div class="content col4">
+              <label for="email">New password</label>
+              <input 
+                type="password" 
+                required
+                data-parsley-required 
+                data-parsley-required-message="Please enter a password"
+                data-parsley-minlength="8" 
+                data-parsley-min-message="Please enter at least 8 characters"  
+                placeholder="" 
+                name="password">
+            </div>
+          </div>
+            <input 
+                type="text" 
+                name="userId"
+                style="display:none" 
+                value="">
+             <input 
+                type="text" 
+                name="token"
+                style="display:none" 
+                value="">
+    
+          <div class="row">
+            <div class="content col2">
+              <button type="submit" class="btn btn-primary">Confirm password</button>  
+            </div>
+          </div>
+        </form>
+    
+          </div>
+        </div>
+      </div> 
+    </div>
+    <!-- END FORGOT PSW -->
+    
+    <!-- BEGIN FORGOT PSW -->
+    <div class="row forgot-psw">
+    
+      <div class="content push2 col2 sheet sheet-page">
+    
+         <!-- HEADER ROW -->
+        <div class="row">
+          <div class="content col4 text-center">
+            <div class="logo-login-img"></div> 
+          </div>
+        </div>  
+    
+        <div class="row">
+          <div class="content col4 text-center">
+            <span class="sign-up-head">Enter your email to recover your password</span>
+          </div>
+        </div>       
+    
+        <div class="row">
+          <div class="col4">
+      
+           <form 
+            id="local-signup"
+            action="/user/forgetPwd?_csrf=DUX0VSCa-1AfNioH75zdgAe6IaxREfZAb4_Q" 
+            method="post" 
+            data-parsley-validate>
+          
+          <!--       <input 
+            style="display:none" 
+            id="csrf_token"
+            type="text" 
+            value="DUX0VSCa-1AfNioH75zdgAe6IaxREfZAb4_Q" 
+            name="_csrf"/>
+     -->
+    
+          <div class="row">
+            <div class="content col4">
+              <label for="email">Email address</label>
+              <input 
+                type="email" 
+                data-parsley-type="email"
+                required 
+                data-parsley-required 
+                data-parsley-required-message="Please enter an email address"
+                placeholder="" 
+                name="primaryEmail">
+            </div>
+          </div>
+    
+         
+          <div class="row">
+            <div class="content col4">
+              <button type="submit" class="btn btn-primary">Recover Password</button>  
+            </div>
+          </div>
+        </form>
+    
+    
+          </div>
+        </div>
+      </div> 
+    </div>
+    <!-- END FORGOT PSW -->
+    
+    <!-- BEGIN DONT ACCOUNT ROW -->    
+    <div class="row forgot-psw">
+      <!-- DONT ACCOUNT CONTENT -->
+      <div class="content col2 push2">
+        <button class="btn signin-account-switch" >Back</button>  
+      </div>
+    </div>
+    <!-- END DONT ACCOUNT ROW -->
+  <!-- END CONTAINER -->
+  </div>
+
+  <div id="success-notification" class="notification notification-positive">
+    <button class="iconbtn mdi mdi-close closebtn"></button>
+    <h2 class="notification-title"></h2>
+    <p class="notification-body"></p>
+  </div>  <div id="error-notification" class="notification notification-negative">
+    <button class="iconbtn mdi mdi-close closebtn"></button>
+    <h2 class="notification-title"></h2>
+    <p class="notification-body"></p>
+  </div>
+  <script src="https://drrjhlchpvi7e.cloudfront.net/editor/a75ab6e/dist/login.gz.js"></script>
+
+  </body>
+</html>
