@@ -22,7 +22,10 @@
         <a href="#" data-activates="mobile-demo" class="button-collapse">
           <i class="material-icons">menu</i>
         </a>
-        <i class="material-icons left"></i>Controle de Chamados - TI</a>
+        <i class="material-icons left"></i>
+        <div class="valign-wrapper" style="font-size: 30px; width: 50%">
+          <img width="120" src="img/Logo.png" style="margin-right: 10px">Controle de Chamados - TI</div>
+      </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li>
           <a class="waves-effect waves-light btn grey darken-1" href="index.html">
@@ -30,17 +33,17 @@
         </li>
         <li>
           <a class="waves-effect waves-light btn grey darken-1" href="pages/login.html">
-            <i class="material-icons left">person</i>Entrar</a>
+            <i class="material-icons left">account_circle</i>Entrar</a>
         </li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-          <li>
-              <a href="index.html">
-                <i class="material-icons left black-text">add_box</i>Novo Ticket</a>
-            </li>
+        <li>
+          <a href="index.html">
+            <i class="material-icons left black-text">add_box</i>Novo Ticket</a>
+        </li>
         <li>
           <a href="pages/login.html">
-            <i class="material-icons left black-text">person</i>Entrar</a>
+            <i class="material-icons left black-text">account_circle</i>Entrar</a>
         </li>
       </ul>
     </div>
@@ -99,7 +102,7 @@
 
   <!-- FOOTER-->
   <br>
-  <footer class="page-footer grey darken-5" >
+  <footer class="page-footer grey darken-5">
     <div class="footer-copyright">
       <div class="container" style="margin-left: 45%">
         © 2017 Copyright Fibrafort
@@ -118,7 +121,7 @@
       $('input#input_text, textarea#textarea1').characterCounter();
     });
 
-    $(".button-collapse").sideNav();
+    $(".button-collapse").sideNav(); //Menu Mobile
   </script>
 </body>
 
