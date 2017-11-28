@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
@@ -27,7 +28,7 @@
       </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li>
-          <a class="waves-effect waves-light btn grey darken-1" href="index.html">
+          <a class="waves-effect waves-light btn grey darken-1" onclick="limpaFormulario()">
             <i class="large material-icons left" style="font-size: 30px">add_box</i>Novo Ticket</a>
         </li>
         <li>
@@ -37,7 +38,7 @@
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li>
-          <a href="index.html">
+          <a onclick="limpaFormulario()">
             <i class="material-icons left black-text">add_box</i>Novo Ticket</a>
         </li>
         <li>
@@ -55,25 +56,25 @@
           <div class="row">
             <div class="input-field col m4 s12">
               <i class="material-icons prefix">account_circle</i>
-              <input id="nome" required type="text" class="validate">
+              <input id="first" required type="text" class="validate">
               <label for="icon_prefix">Nome</label>
             </div>
             <div class="input-field col m2 s12">
               <i class="material-icons prefix">phone</i>
-              <input id="icon_telephone" required type="number" max="999" min="100" class="validate">
+              <input id="fone" required type="number" max="999" min="100" class="validate">
               <label for="icon_telephone">Ramal</label>
             </div>
             <div class="input-field col s12 m4 ">
               <i class="material-icons prefix">work</i>
-              <input type="text" required id="autocomplete-input" class="autocomplete">
+              <input type="text" required id="setor" class="autocomplete validate">
               <label for="autocomplete-input">Setor</label>
             </div>
           </div>
-        <div class="row">
+          <div class="row">
             <div class="row">
               <div class="input-field col s12 m10">
                 <i class="material-icons prefix">report problem</i>
-                <textarea id="textarea1" class="materialize-textarea" data-length="500" maxlength="500"></textarea>
+                <textarea id="descricao" class="materialize-textarea validate" data-length="500" maxlength="500"></textarea>
                 <label for="textarea1">Descrição do Problema</label>
               </div>
             </div>
@@ -83,18 +84,18 @@
                 <input id="upload" type="file" multiple>
               </div>
               <div class="file-path-wrapper">
-                <input class="file-path validate" type="text">
+                <input id= "upload-text" class="file-path validate" type="text">
               </div>
               <label style="margin-top: 40px; margin-left: 120px">Caso necessário insira um ou mais arquivos em anexo ao seu ticket</label>
             </div>
-        </div>
-        <div class="input-field col m12 s12 offset-m5 offset-s3">
-          <button class="btn waves-effect waves-light" style="margin-top: 40px" type="submit" name="action">Enviar Ticket
-            <i class="material-icons right">send</i>
-          </button>
-        </div>
+          </div>
+          <div class="input-field col m12 s12 offset-m5 offset-s3">
+            <button class="btn waves-effect waves-light" style="margin-top: 40px" type="submit" name="action">Enviar Ticket
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
       </div>
-    </form>
+      </form>
   </main>
 
 
@@ -112,8 +113,9 @@
     crossorigin="anonymous"></script>
   <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/configHtml.js"></script>
   <script>
-
+    //Controle de tamanho de Upload
     var upload = document.getElementById("upload");
     upload.addEventListener("change", function (e) {
       var size = upload.files[0].size;
@@ -126,12 +128,15 @@
       e.preventDefault();
     });
 
-    $(document).ready(function () {
-      $('#nome').focus();
-      $('input#input_text, textarea#textarea1').characterCounter();
-    });
-
-    $(".button-collapse").sideNav();
+    function limpaFormulario() {
+      document.getElementById('first').value = '';
+      document.getElementById('fone').value = '';
+      document.getElementById('setor').value = '';
+      document.getElementById('descricao').value = '';
+      document.getElementById('upload-text').value = '';
+      document.getElementById('upload').value = '';
+      $('#first').focus();
+    }
   </script>
 </body>
 
