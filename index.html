@@ -96,6 +96,17 @@
           </div>
         </form>
       </div>
+
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Tamanho não permitido!</h4>
+          <p>Para upload escolha um arquivo que não ultrapasse de 20Mb</p>
+        </div>
+        <div class="modal-footer">
+          <a class="modal-action modal-close waves-effect waves-green btn-flat">Entendido</a>
+        </div>
+      </div>
     </form>
   </main>
 
@@ -120,10 +131,9 @@
     var upload = document.getElementById("upload");
     upload.addEventListener("change", function (e) {
       var size = upload.files[0].size;
-      if (size < 20971520) { //20MB         
-        alert('Permitido, tamanho total de :' + (size / 1024) / 1024); //Abaixo do permitido
-      } else {
-        alert('Não permitido, tamanho total de :' + (size / 1024) / 1024); //Acima do limite
+      if (size > 20971520) { //20MB         
+        $('#modal1').modal('open');
+        // alert('Não permitido, tamanho máximo aceito de 20Mb');
         upload.value = ""; //Limpa o campo          
       }
       e.preventDefault();
@@ -138,6 +148,8 @@
       document.getElementById('upload').value = '';
       $('#first').focus();
     }
+
+    
   </script>
 </body>
 
