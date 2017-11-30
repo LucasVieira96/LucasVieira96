@@ -7,3 +7,4 @@ $(document).ready(function () {
 
 //menuLateral
 $(".button-collapse").sideNav();
+
