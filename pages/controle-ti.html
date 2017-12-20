@@ -18,25 +18,25 @@
     <!-- Dropdown Structure -->
     <ul id="dropdown1" class="dropdown-content grey darken-4" style="margin-top: 65px">
         <li>
-            <a href="#!">
-                <i class="material-icons center">view_module</i>Editar Usuário</a>
+            <a href="#!" class="white-text">
+                <i class="material-icons center">edit</i>Editar Usuário</a>
         </li>
         <li>
-            <a href="#!">
+            <a href="#!" class="white-text">
                 <i class="material-icons center">print</i>Gerar Relatório</a>
         </li>
         <li class="divider"></li>
         <li>
-            <a href="#!">
+            <a href="#!" class="white-text">
                 <i class="material-icons center">assignment_late</i>Chamados Aberto</a>
         </li>
         <li>
-            <a href="#!">
+            <a href="#!" class="white-text">
                 <i class="material-icons center">assignment_turned_in</i>Chamados Finalizados</a>
         </li>
         <li class="divider"></li>
         <li>
-            <a href="login.html">
+            <a href="login.html" class="white-text">
                 <i class="material-icons">exit_to_app</i>Sair</a>
         </li>
         </li>
@@ -59,8 +59,6 @@
                         <i class="left large material-icons" style="font-size: 30px">person
                             <i class="material-icons left">arrow_drop_down</i>
                         </i>
-
-                    </a>
                     </a>
                 </li>
             </ul>
@@ -76,138 +74,186 @@
     <main>
         <!--FILTRO-->
         <div class="row">
-            <div class="col s12 m6 offset-m6">
-                <div class="card grey darken-4">
+            <div class="col s12 m12">
+                <div class="card grey darken-3">
                     <div class="card-content white-text">
                         <span class="card-title center">Filtros</span>
 
                     </div>
                     <div class="card-action">
-                        <a href="#">This is a link</a>
+                        <div class="row">
+                            <div class="input-field col s6 white-text">
+                                <i class="material-icons prefix">search</i>
+                                <input id="searchSolicitante" class="search" type="text" onkeyup="filtroSolicitante(1)">
+                                <label for="icon_prefix">Solicitante</label>
+                            </div>
+                            <div class="input-field col s6 white-text">
+                                <i class="material-icons prefix">search</i>
+                                <input id="searchSetor" class="search" type="text" onkeyup="filtroSetor(2)">
+                                <label for="icon_prefix">Setor</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!--TABELA-->
-        <div class="row">
-            <div class="col s12" style="margin-top: 2%">
-                <table class="bordered striped responsive-table centered">
-                    <thead>
-                        <tr>
-                            <th>Data Abertura</th>
-                            <th>Solicitante</th>
-                            <th>Setor</th>
-                            <th>Prioridade</th>
-                            <th>Recurso</th>
-                            <th>Téc. Responsável</th>
-                            <th style="width: 15%">Ações</th>
-                        </tr>
-                    </thead>
+            <!--TABELA-->
+            <div class="row">
+                <div class="col s12" style="margin-top: 2%">
+                    <table class="bordered striped responsive-table centered" id="tableChamados">
+                        <thead>
+                            <tr>
+                                <th>Data Abertura</th>
+                                <th>Solicitante</th>
+                                <th>Setor</th>
+                                <th>Prioridade</th>
+                                <th>Recurso</th>
+                                <th>Téc. Responsável</th>
+                                <th style="width: 15%">Ações</th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        <tr>
-                            <td>20/12/2017 - 11:59</td>
-                            <td>Lucas</td>
-                            <td>TI</td>
-                            <td>Média</td>
-                            <td>Externo</td>
-                            <td>Lucas</td>
-                            <td>
-                                <a style="margin-left: 5px" href="#delete" class="right btn-floating btn-small waves-effect waves-light grey modal-trigger">
-                                    <i class="material-icons">delete</i>
-                                </a>
-                                <a style="margin-left: 5px" href="#edit" class="right btn-floating btn-small waves-effect waves-light yellow modal-trigger">
-                                    <i class="material-icons">create</i>
-                                </a>
-                                <a style="margin-left: 5px" href="#detalhes" class="right btn-floating btn-small waves-effect waves-light blue modal-trigger">
-                                    <i class="material-icons">find_in_page</i>
-                                </a>
-                                <a style="margin-left: 5px" class="right btn-floating btn-small waves-effect waves-light green">
-                                    <i class="material-icons">done</i>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>20/12/2017 - 11:59</td>
-                            <td>Lucas</td>
-                            <td>TI</td>
-                            <td>Baixa</td>
-                            <td>Interno</td>
-                            <td>Jony</td>
-                            <td>
-                                <a style="margin-left: 5px" class="right btn-floating btn-small waves-effect waves-light grey">
-                                    <i class="material-icons">delete</i>
-                                </a>
-                                <a style="margin-left: 5px" class="right btn-floating btn-small waves-effect waves-light yellow">
-                                    <i class="material-icons">create</i>
-                                </a>
-                                <a style="margin-left: 5px" class="right btn-floating btn-small waves-effect waves-light blue">
-                                    <i class="material-icons">find_in_page</i>
-                                </a>
-                                <a style="margin-left: 5px" class="right btn-floating btn-small waves-effect waves-light green">
-                                    <i class="material-icons">done</i>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>20/12/2017 - 11:59</td>
-                            <td>Lucas</td>
-                            <td>TI</td>
-                            <td>Alta</td>
-                            <td>Interno</td>
-                            <td>Jony</td>
-                            <td>
-                                <a style="margin-left: 5px" class="right btn-floating btn-small waves-effect waves-light grey">
-                                    <i class="material-icons">delete</i>
-                                </a>
-                                <a style="margin-left: 5px" class="right btn-floating btn-small waves-effect waves-light yellow">
-                                    <i class="material-icons">create</i>
-                                </a>
-                                <a style="margin-left: 5px" class="right btn-floating btn-small waves-effect waves-light blue">
-                                    <i class="material-icons">find_in_page</i>
-                                </a>
-                                <a style="margin-left: 5px" class="right btn-floating btn-small waves-effect waves-light green">
-                                    <i class="material-icons">done</i>
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                        <tbody>
+                            <tr>
+                                <td>20/12/2017 - 11:59</td>
+                                <td>Zé Pequeno</td>
+                                <td>Administrativo</td>
+                                <td>Média</td>
+                                <td>Externo</td>
+                                <td>Lucas</td>
+                                <td>
+                                    <a style="margin-left: 5px" href="#delete" class="right btn-floating btn-small waves-effect waves-light grey modal-trigger tooltipped"
+                                        data-position="top" data-delay="50" data-tooltip="Deletar Registro">
+                                        <i class="material-icons">delete</i>
+                                    </a>
+                                    <a style="margin-left: 5px" href="#edit" class="right btn-floating btn-small waves-effect waves-light yellow darken-3 modal-trigger tooltipped"
+                                        data-position="top" data-delay="50" data-tooltip="Editar Registro">
+                                        <i class="material-icons">edit</i>
+                                    </a>
+                                    <a style="margin-left: 5px" href="#detalhes" class="right btn-floating btn-small waves-effect waves-light purple darken-3 modal-trigger tooltipped"
+                                        data-position="top" data-delay="50" data-tooltip="Visualizar Registro">
+                                        <i class="material-icons">find_in_page</i>
+                                    </a>
+                                    <a style="margin-left: 5px" class="right btn-floating btn-small waves-effect waves-light blue darken-3 tooltipped" data-position="top"
+                                        data-delay="50" data-tooltip="Atender Chamado">
+                                        <i class="material-icons">cached</i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20/12/2017 - 11:59</td>
+                                <td>Teste</td>
+                                <td>Comercial</td>
+                                <td>Baixa</td>
+                                <td>Interno</td>
+                                <td>Jony</td>
+                                <td>
+                                    <a style="margin-left: 5px" href="#delete" class="right btn-floating btn-small waves-effect waves-light grey modal-trigger tooltipped"
+                                        data-position="top" data-delay="50" data-tooltip="Deletar Registro">
+                                        <i class="material-icons">delete</i>
+                                    </a>
+                                    <a style="margin-left: 5px" href="#edit" class="right btn-floating btn-small waves-effect waves-light yellow darken-3 modal-trigger tooltipped"
+                                        data-position="top" data-delay="50" data-tooltip="Editar Registro">
+                                        <i class="material-icons">edit</i>
+                                    </a>
+                                    <a style="margin-left: 5px" href="#detalhes" class="right btn-floating btn-small waves-effect waves-light purple darken-3 modal-trigger tooltipped"
+                                        data-position="top" data-delay="50" data-tooltip="Visualizar Registro">
+                                        <i class="material-icons">find_in_page</i>
+                                    </a>
+                                    <a style="margin-left: 5px" class="right btn-floating btn-small waves-effect waves-light red darken-3 tooltipped" data-position="top"
+                                        data-delay="50" data-tooltip="Finalizar Chamado">
+                                        <i class="material-icons">done</i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20/12/2017 - 11:59</td>
+                                <td>Joãozinho</td>
+                                <td>Comercial</td>
+                                <td>Baixa</td>
+                                <td>Interno</td>
+                                <td>Jony</td>
+                                <td>
+                                    <a style="margin-left: 5px" href="#delete" class="right btn-floating btn-small waves-effect waves-light grey modal-trigger tooltipped"
+                                        data-position="top" data-delay="50" data-tooltip="Deletar Registro">
+                                        <i class="material-icons">delete</i>
+                                    </a>
+                                    <a style="margin-left: 5px" href="#edit" class="right btn-floating btn-small waves-effect waves-light yellow darken-3 modal-trigger tooltipped"
+                                        data-position="top" data-delay="50" data-tooltip="Editar Registro">
+                                        <i class="material-icons">edit</i>
+                                    </a>
+                                    <a style="margin-left: 5px" href="#detalhes" class="right btn-floating btn-small waves-effect waves-light purple darken-3 modal-trigger tooltipped"
+                                        data-position="top" data-delay="50" data-tooltip="Visualizar Registro">
+                                        <i class="material-icons">find_in_page</i>
+                                    </a>
+                                    <a style="margin-left: 5px" class="right btn-floating btn-small waves-effect waves-light red darken-3 tooltipped" data-position="top"
+                                        data-delay="50" data-tooltip="Finalizar Chamado">
+                                        <i class="material-icons">done</i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20/12/2017 - 11:59</td>
+                                <td>Lucas</td>
+                                <td>TI</td>
+                                <td>Alta</td>
+                                <td>Interno</td>
+                                <td>Jony</td>
+                                <td>
+                                    <a style="margin-left: 5px" href="#delete" class="right btn-floating btn-small waves-effect waves-light grey modal-trigger tooltipped"
+                                        data-position="top" data-delay="50" data-tooltip="Deletar Registro">
+                                        <i class="material-icons">delete</i>
+                                    </a>
+                                    <a style="margin-left: 5px" href="#edit" class="right btn-floating btn-small waves-effect waves-light yellow darken-3 modal-trigger tooltipped"
+                                        data-position="top" data-delay="50" data-tooltip="Editar Registro">
+                                        <i class="material-icons">edit</i>
+                                    </a>
+                                    <a style="margin-left: 5px" href="#detalhes" class="right btn-floating btn-small waves-effect waves-light purple darken-3 modal-trigger tooltipped"
+                                        data-position="top" data-delay="50" data-tooltip="Visualizar Registro">
+                                        <i class="material-icons">find_in_page</i>
+                                    </a>
+                                    <a style="margin-left: 5px" class="right btn-floating btn-small waves-effect waves-light red darken-3 tooltipped disabled"
+                                        data-position="top" data-delay="50" data-tooltip="Chamado Finalizado">
+                                        <i class="material-icons">done</i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
 
-        <!-- Modals Structures -->
-        <div id="delete" class="modal">
-            <div class="modal-content">
-                <h4>Excluir Conteúdo</h4>
-                <p>Você tem certeza que deseja excluir este registro?</p>
+            <!-- Modals Structures -->
+            <div id="delete" class="modal">
+                <div class="modal-content">
+                    <h4>Excluir Conteúdo</h4>
+                    <p>Você tem certeza que deseja excluir este registro?</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Sim</a>
+                    <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">Não</a>
+                </div>
             </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Sim</a>
-                <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">Não</a>
+            <div id="detalhes" class="modal">
+                <div class="modal-content">
+                    <h4>Detalhes</h4>
+                    <p>Você tem certeza que deseja excluir este registro?</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Sim</a>
+                    <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">Não</a>
+                </div>
             </div>
-        </div>
-        <div id="detalhes" class="modal">
-            <div class="modal-content">
-                <h4>Detalhes</h4>
-                <p>Você tem certeza que deseja excluir este registro?</p>
+            <div id="edit" class="modal">
+                <div class="modal-content">
+                    <h4>Editar Conteúdo</h4>
+                    <p>Você tem certeza que deseja excluir este registro?</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Sim</a>
+                    <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">Não</a>
+                </div>
             </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Sim</a>
-                <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">Não</a>
-            </div>
-        </div>
-        <div id="edit" class="modal">
-            <div class="modal-content">
-                <h4>Editar Conteúdo</h4>
-                <p>Você tem certeza que deseja excluir este registro?</p>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Sim</a>
-                <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">Não</a>
-            </div>
-        </div>
     </main>
 
 
@@ -226,7 +272,6 @@
         crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
-
     <script type="text/javascript" src="../js/configHtml.js">
     </script>
 </body>
