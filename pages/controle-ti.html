@@ -226,7 +226,8 @@
             <!-- Modals Structures -->
             <div id="delete" class="modal">
                 <div class="modal-content">
-                    <h4>Excluir Conteúdo</h4>
+                    <h4>
+                        <a class="material-icons black-text" style="font-size: 30px">warning</a> Excluir Conteúdo</h4>
                     <p>Você tem certeza que deseja excluir este registro?</p>
                 </div>
                 <div class="modal-footer">
@@ -237,21 +238,80 @@
             <div id="detalhes" class="modal">
                 <div class="modal-content">
                     <h4>Detalhes</h4>
-                    <p>Você tem certeza que deseja excluir este registro?</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Sim</a>
-                    <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">Não</a>
+                    <form>
+                        <div class="row" style="margin-top: 30px; margin-left: 2%">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col m4 s12">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <input id="first" type="text" readonly>
+                                        <label for="icon_prefix">Nome</label>
+                                    </div>
+                                    <div class="input-field col m2 s12">
+                                        <i class="material-icons prefix">phone</i>
+                                        <input id="fone" type="number" readonly>
+                                        <label for="icon_telephone">Ramal</label>
+                                    </div>
+                                    <div class="input-field col s12 m4 ">
+                                        <i class="material-icons prefix">work</i>
+                                        <input type="text" id="setor" readonly>
+                                        <label for="autocomplete-input">Setor</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="row">
+                                        <div class="input-field col s12 m10">
+                                            <i class="material-icons prefix">report problem</i>
+                                            <textarea id="descricao" class="materialize-textarea" readonly></textarea>
+                                            <label for="textarea1">Descrição do Problema</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+                        </div>
                 </div>
             </div>
             <div id="edit" class="modal">
                 <div class="modal-content">
                     <h4>Editar Conteúdo</h4>
-                    <p>Você tem certeza que deseja excluir este registro?</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Sim</a>
-                    <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">Não</a>
+                    <form>
+                        <div class="row" style="margin-top: 30px; margin-left: 2%">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col m4 s12">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <input id="first" required type="text" class="validate">
+                                        <label for="icon_prefix">Nome</label>
+                                    </div>
+                                    <div class="input-field col m2 s12">
+                                        <i class="material-icons prefix">phone</i>
+                                        <input id="fone" required type="number" max="999" min="900" class="validate">
+                                        <label for="icon_telephone">Ramal</label>
+                                    </div>
+                                    <div class="input-field col s12 m4 ">
+                                        <i class="material-icons prefix">work</i>
+                                        <input type="text" required id="setor" class="autocomplete validate">
+                                        <label for="autocomplete-input">Setor</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="row">
+                                        <div class="input-field col s12 m10">
+                                            <i class="material-icons prefix">report problem</i>
+                                            <textarea id="descricao" class="materialize-textarea validate" data-length="500" maxlength="500"></textarea>
+                                            <label for="textarea1">Descrição do Problema</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Salvar</a>
+                            <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">Cancelar</a>
+                        </div>
                 </div>
             </div>
     </main>
