@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="../css/footer.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body>
+
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content grey darken-4" style="margin-top: 65px">
+        <li>
+            <a href="usuario-edit.html" class="white-text">
+                <i class="material-icons center">edit</i>Editar Usuário</a>
+        </li>
+        <li>
+            <a href="#!" class="white-text">
+                <i class="material-icons center">print</i>Gerar Relatório</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="controle-ti-aberto.html" class="white-text">
+                <i class="material-icons center">assignment_late</i>Chamados Aberto</a>
+        </li>
+        <li>
+            <a href="controle-ti-fechado.html" class="white-text">
+                <i class="material-icons center">assignment_turned_in</i>Chamados Finalizados</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="login.html" class="white-text">
+                <i class="material-icons">exit_to_app</i>Sair</a>
+        </li>
+        </li>
+    </ul>
+    <!-- NAV -->
+
+    <nav>
+        <div class="nav-wrapper grey darken-4">
+            <a class="brand-logo">
+                <i class="valign-wrapper hide-on-small-only" style="font-size: 20px">
+                    <img width="120" src="../img/Logo.png" style="margin-right: 10px">Controle de Tickets - Chamados Finalizados</i>
+            </a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a class="material-icons left tooltipped" data-position="bottom" data-delay="50" data-tooltip="Atualizar Página" style="font-size: 40px; margin-top: 10px"
+                        onclick="atualizaPagina()">refresh</a>
+                </li>
+                <li>
+                    <a class="dropdown-button" href="#" data-activates="dropdown1" style="width: 250px">
+                        Lucas Vieira
+                        <i class="left large material-icons" style="font-size: 30px">person
+                            <i class="material-icons left">arrow_drop_down</i>
+                        </i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li>
+                    <a href="../index.html">
+                        <i class="material-icons left black-text">reply</i>Voltar</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Conteúdo -->
+    <main>
+        <!--FILTRO-->
+        <div class="row">
+            <div class="col s12 m12">
+                <div class="card grey darken-3">
+                    <div class="card-content white-text">
+                        <span class="card-title center">Filtros</span>
+
+                    </div>
+                    <div class="card-action">
+                        <div class="row">
+                            <div class="input-field col s6 white-text">
+                                <i class="material-icons prefix">search</i>
+                                <input id="searchSolicitante" class="search" type="text" onkeyup="filtroSolicitante(1)">
+                                <label for="icon_prefix">Solicitante</label>
+                            </div>
+                            <div class="input-field col s6 white-text">
+                                <i class="material-icons prefix">search</i>
+                                <input id="searchSetor" class="search" type="text" onkeyup="filtroSetor(2)">
+                                <label for="icon_prefix">Setor</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--TABELA-->
+            <div class="row">
+                <div class="col s12" style="margin-top: 2%">
+                    <table class="bordered striped responsive-table centered" id="tableChamados">
+                        <thead>
+                            <tr>
+                                <th>Data Abertura</th>
+                                <th>Solicitante</th>
+                                <th>Setor</th>
+                                <th>Prioridade</th>
+                                <th>Recurso</th>
+                                <th>Téc. Responsável</th>
+                                <th>Data Encerramento</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>20/12/2017 - 11:59</td>
+                                <td>Zé Pequeno</td>
+                                <td>Administrativo</td>
+                                <td>Média</td>
+                                <td>Externo</td>
+                                <td>Lucas</td>
+                                <td>20/12/2017 - 12:15</td>
+                            </tr>
+                            <tr>
+                                <td>20/12/2017 - 11:59</td>
+                                <td>Teste</td>
+                                <td>Comercial</td>
+                                <td>Baixa</td>
+                                <td>Interno</td>
+                                <td>Jony</td>
+                                <td>20/12/2017 - 12:15</td>
+                            </tr>
+                            <tr>
+                                <td>20/12/2017 - 11:59</td>
+                                <td>Joãozinho</td>
+                                <td>Comercial</td>
+                                <td>Baixa</td>
+                                <td>Interno</td>
+                                <td>Jony</td>
+                                <td>20/12/2017 - 12:15</td>
+                            </tr>
+                            <tr>
+                                <td>20/12/2017 - 11:59</td>
+                                <td>Lucas</td>
+                                <td>TI</td>
+                                <td>Alta</td>
+                                <td>Interno</td>
+                                <td>Jony</td>
+                                <td>20/12/2017 - 12:15</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- FOOTER-->
+
+    <footer class="page-footer grey darken-5">
+        <div class="footer-copyright">
+            <div class="container" style="margin-left: 45%">
+                © 2017 Copyright Fibrafort
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+    <script type="text/javascript" src="../js/configHtml.js">
+    </script>
+</body>
+
+</html>

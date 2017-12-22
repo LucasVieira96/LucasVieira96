@@ -18,7 +18,7 @@
     <!-- Dropdown Structure -->
     <ul id="dropdown1" class="dropdown-content grey darken-4" style="margin-top: 65px">
         <li>
-            <a href="#!" class="white-text">
+            <a href="usuario-edit.html" class="white-text">
                 <i class="material-icons center">edit</i>Editar Usuário</a>
         </li>
         <li>
@@ -27,11 +27,11 @@
         </li>
         <li class="divider"></li>
         <li>
-            <a href="#!" class="white-text">
+            <a href="controle-ti-aberto.html" class="white-text">
                 <i class="material-icons center">assignment_late</i>Chamados Aberto</a>
         </li>
         <li>
-            <a href="#!" class="white-text">
+            <a href="controle-ti-fechado.html" class="white-text">
                 <i class="material-icons center">assignment_turned_in</i>Chamados Finalizados</a>
         </li>
         <li class="divider"></li>
@@ -47,12 +47,16 @@
         <div class="nav-wrapper grey darken-4">
             <a class="brand-logo">
                 <i class="valign-wrapper hide-on-small-only" style="font-size: 20px">
-                    <img width="120" src="../img/Logo.png" style="margin-right: 10px">Controle de Tickets</i>
+                    <img width="120" src="../img/Logo.png" style="margin-right: 10px">Controle de Tickets - Chamados em Aberto</i>
             </a>
             <a href="#" data-activates="mobile-demo" class="button-collapse">
                 <i class="material-icons">menu</i>
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a class="material-icons left tooltipped" data-position="bottom" data-delay="50" data-tooltip="Atualizar Página" style="font-size: 40px; margin-top: 10px"
+                        onclick="atualizaPagina()">refresh</a>
+                </li>
                 <li>
                     <a class="dropdown-button" href="#" data-activates="dropdown1" style="width: 250px">
                         Lucas Vieira
@@ -77,20 +81,35 @@
             <div class="col s12 m12">
                 <div class="card grey darken-3">
                     <div class="card-content white-text">
-                        <span class="card-title center">Filtros</span>
+                        <span class="card-title center"><a></a>Filtros</span>
 
                     </div>
                     <div class="card-action">
                         <div class="row">
-                            <div class="input-field col s6 white-text">
-                                <i class="material-icons prefix">search</i>
-                                <input id="searchSolicitante" class="search" type="text" onkeyup="filtroSolicitante(1)">
+                            <div class="input-field col s3 white-text">
+                                <i class="material-icons prefix">format_list_numbered</i>
+                                <input id="searchCodigo" class="search" type="number" min="000001" max="999999" onkeyup="filtroCodigo(0)">
+                                <label for="icon_prefix">Código</label>
+                            </div>
+                            <div class="input-field col s3 white-text">
+                                <i class="material-icons prefix">group</i>
+                                <input id="searchSolicitante" class="search" type="text" onkeyup="filtroSolicitante(2)">
                                 <label for="icon_prefix">Solicitante</label>
                             </div>
-                            <div class="input-field col s6 white-text">
-                                <i class="material-icons prefix">search</i>
-                                <input id="searchSetor" class="search" type="text" onkeyup="filtroSetor(2)">
+                            <div class="input-field col s3 white-text">
+                                <i class="material-icons prefix">work</i>
+                                <input id="searchSetor" class="search" type="text" onkeyup="filtroSetor(3)">
                                 <label for="icon_prefix">Setor</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s3 white-text">
+                                <label>Data Início</label>
+                                <input type="text" class="datepicker">
+                            </div>
+                            <div class="input-field col s3 white-text">
+                                <label>Data Fim</label>
+                                <input type="text" class="datepicker">
                             </div>
                         </div>
                     </div>
@@ -103,24 +122,50 @@
                     <table class="bordered striped responsive-table centered" id="tableChamados">
                         <thead>
                             <tr>
+                                <th>Cód.</th>
                                 <th>Data Abertura</th>
                                 <th>Solicitante</th>
                                 <th>Setor</th>
                                 <th>Prioridade</th>
                                 <th>Recurso</th>
                                 <th>Téc. Responsável</th>
+                                <th>Status</th>
                                 <th style="width: 15%">Ações</th>
                             </tr>
                         </thead>
 
                         <tbody>
                             <tr>
+                                <td>000001</td>
                                 <td>20/12/2017 - 11:59</td>
                                 <td>Zé Pequeno</td>
                                 <td>Administrativo</td>
-                                <td>Média</td>
-                                <td>Externo</td>
-                                <td>Lucas</td>
+                                <td>
+                                    <select>
+                                        <option value="1">Alta</option>
+                                        <option value="2">Média</option>
+                                        <option selected value="3">Baixa</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="1">Externo</option>
+                                        <option selected value="2">Interno</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="1">Lucas</option>
+                                        <option value="2">Jony</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option selected value="1">Aberto</option>
+                                        <option value="2">Em Andamento</option>
+                                        <option value="3">Finalizado</option>
+                                    </select>
+                                </td>
                                 <td>
                                     <a style="margin-left: 5px" href="#delete" class="right btn-floating btn-small waves-effect waves-light grey modal-trigger tooltipped"
                                         data-position="top" data-delay="50" data-tooltip="Deletar Registro">
@@ -141,12 +186,36 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td>000002</td>
                                 <td>20/12/2017 - 11:59</td>
                                 <td>Teste</td>
-                                <td>Comercial</td>
-                                <td>Baixa</td>
-                                <td>Interno</td>
-                                <td>Jony</td>
+                                <td>Administrativo</td>
+                                <td>
+                                    <select>
+                                        <option value="1">Alta</option>
+                                        <option value="2">Média</option>
+                                        <option selected value="3">Baixa</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="1">Externo</option>
+                                        <option selected value="2">Interno</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="1">Lucas</option>
+                                        <option value="2">Jony</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option selected value="1">Aberto</option>
+                                        <option value="2">Em Andamento</option>
+                                        <option value="3">Finalizado</option>
+                                    </select>
+                                </td>
                                 <td>
                                     <a style="margin-left: 5px" href="#delete" class="right btn-floating btn-small waves-effect waves-light grey modal-trigger tooltipped"
                                         data-position="top" data-delay="50" data-tooltip="Deletar Registro">
@@ -167,12 +236,36 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td>000003</td>
                                 <td>20/12/2017 - 11:59</td>
                                 <td>Joãozinho</td>
                                 <td>Comercial</td>
-                                <td>Baixa</td>
-                                <td>Interno</td>
-                                <td>Jony</td>
+                                <td>
+                                    <select>
+                                        <option value="1">Alta</option>
+                                        <option value="2">Média</option>
+                                        <option selected value="3">Baixa</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="1">Externo</option>
+                                        <option selected value="2">Interno</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="1">Lucas</option>
+                                        <option value="2">Jony</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="1">Aberto</option>
+                                        <option selected value="2">Em Andamento</option>
+                                        <option value="3">Finalizado</option>
+                                    </select>
+                                </td>
                                 <td>
                                     <a style="margin-left: 5px" href="#delete" class="right btn-floating btn-small waves-effect waves-light grey modal-trigger tooltipped"
                                         data-position="top" data-delay="50" data-tooltip="Deletar Registro">
@@ -193,12 +286,36 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td>000004</td>
                                 <td>20/12/2017 - 11:59</td>
                                 <td>Lucas</td>
                                 <td>TI</td>
-                                <td>Alta</td>
-                                <td>Interno</td>
-                                <td>Jony</td>
+                                <td>
+                                    <select>
+                                        <option value="1">Alta</option>
+                                        <option selected value="2">Média</option>
+                                        <option value="3">Baixa</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="1">Externo</option>
+                                        <option selected value="2">Interno</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="1">Lucas</option>
+                                        <option value="2">Jony</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="1">Aberto</option>
+                                        <option selected value="2">Em Andamento</option>
+                                        <option value="3">Finalizado</option>
+                                    </select>
+                                </td>
                                 <td>
                                     <a style="margin-left: 5px" href="#delete" class="right btn-floating btn-small waves-effect waves-light grey modal-trigger tooltipped"
                                         data-position="top" data-delay="50" data-tooltip="Deletar Registro">
@@ -212,8 +329,8 @@
                                         data-position="top" data-delay="50" data-tooltip="Visualizar Registro">
                                         <i class="material-icons">find_in_page</i>
                                     </a>
-                                    <a style="margin-left: 5px" class="right btn-floating btn-small waves-effect waves-light red darken-3 tooltipped disabled"
-                                        data-position="top" data-delay="50" data-tooltip="Chamado Finalizado">
+                                    <a style="margin-left: 5px" class="right btn-floating btn-small waves-effect waves-light red darken-3 tooltipped" data-position="top"
+                                        data-delay="50" data-tooltip="Finalizar Chamado">
                                         <i class="material-icons">done</i>
                                     </a>
                                 </td>
@@ -332,8 +449,8 @@
         crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
-    <script type="text/javascript" src="../js/configHtml.js">
-    </script>
+    <script type="text/javascript" src="../js/configHtml.js"/>
+    <script src="lib/translations/pt-BR.js"></script>
 </body>
 
 </html>
